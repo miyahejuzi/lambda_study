@@ -7,11 +7,9 @@ import spock.lang.Unroll
 class HelloWorldTest extends Specification {
 
     @Unroll
-    def "HelloWorld"() {
-        given:
-        def helloWorld = new HelloWorld()
+    def "HelloWorld of #description"() {
         expect:
-        result == helloWorld.helloWorld(name)
+        result == new HelloWorld().helloWorld(name)
         where:
         result             || name   | description
         "hello world name" || "name" | "is true"
